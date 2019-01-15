@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <title>Street Clock</title>
+    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+</head>
+<body>
+    <style>
+    #clock{
+font-size: 50pt;
+font-weight: bold;
+color: gold;
+margin-left: 150px; 
+margin-top: 195px;
+font-family: 'Tangerine', serif;
+letter-spacing: 2px;
+
+
+    }
+
+    body{
+        background-image: url('../img/rain4.jpg');
+       
+        background-size: cover;
+        
+        
+        }
+    </style>
+
+<div id="clock"></div>
+
+    <script>
+        function digitalClock() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let day = date.getDay();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+
+            if(hours.length < 2){
+                hours = '0' + hours;
+            }
+            if(minutes.length < 2) {
+                minutes = '0' + minutes;
+            }
+
+            if(seconds.length < 2){
+            seconds = '0'+ seconds; 
+            }
+
+            if (month.length === 0){
+                monthDays = 'Jan';
+            }
+
+            if(month.length === 1){
+                month = 'Feb';
+            }
+            if (month.length === 2){
+                monthDays = 'Mar';
+            }
+
+            if(month.length === 3){
+                month = 'Apr';
+            }
+            if (month.length === 4){
+                monthDays = 'May';
+            }
+
+            if(month.length === 5){
+                month = 'Jun';
+            }
+            if (month.length === 6){
+                monthDays = 'Jul';
+            }
+
+            if(month.length === 7){
+                month = 'Aug';
+            }
+            if (month.length === 8){
+                monthDays = 'Sep';
+            }
+
+            if(month.length === 9){
+                month = 'Oct';
+            }
+            if (month.length === 10){
+                monthDays = 'Nov';
+            }
+
+            if(month.length === 11){
+                month = 'Dec';
+            }
+
+
+
+        const weekdays = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+        const monthDays = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+        'Sept', 'Oct', 'Nov', 'Dec'];
+    
+        // for(i = 0; i < 32; i++){
+        //     console.log(i);
+        // }
+        const clock = weekdays[day] +' '+ monthDays[month] +' ' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+        document.getElementById('clock').innerHTML = clock;
+        console.log(clock);
+                }
+         digitalClock();
+         setInterval(digitalClock, 1000);
+        
+    // 
+    // 
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
