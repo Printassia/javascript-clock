@@ -4,29 +4,30 @@
     <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
 </head>
 <body>
-    <style>
-    #clock{
-font-size: 50pt;
-font-weight: bold;
-color: gold;
-margin-left: 150px; 
-margin-top: 195px;
-font-family: 'Tangerine', serif;
-letter-spacing: 2px;
-
-
-    }
-
-    body{
-        background-image: url('../img/rain4.jpg');
-       
-        background-size: cover;
-        
-        
-        }
-    </style>
-
+  
 <div id="clock"></div>
+
+<style>
+#clock{
+    font-size: 50pt;
+    font-weight: bold;
+    color: gold;
+    margin-left: 150px; 
+    margin-top: 195px;
+    font-family: 'Thasadith', sans-serif;
+    letter-spacing: 2px;
+    
+    
+        }
+    
+        body{
+            background-image: url('../img/rain4.jpg');
+           
+            background-size: cover;
+            
+            
+            }
+</style>
 
     <script>
         function digitalClock() {
@@ -37,6 +38,9 @@ letter-spacing: 2px;
             let day = date.getDay();
             let month = date.getMonth();
             let year = date.getFullYear();
+            let dayMonth = date.getDate();
+
+            
 
             if(hours.length < 2){
                 hours = '0' + hours;
@@ -46,7 +50,7 @@ letter-spacing: 2px;
             }
 
             if(seconds.length < 2){
-            seconds = '0'+ seconds; 
+            seconds = '0' + seconds; 
             }
 
             if (month.length === 0){
@@ -97,19 +101,14 @@ letter-spacing: 2px;
         const weekdays = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
         const monthDays = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
         'Sept', 'Oct', 'Nov', 'Dec'];
-    
-        // for(i = 0; i < 32; i++){
-        //     console.log(i);
-        // }
-        const clock = weekdays[day] +' '+ monthDays[month] +' ' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+
+        const clock = weekdays[day] +' '+ dayMonth +' '+  monthDays[month] +' ' + year + ' ' + hours + ':' + minutes + ':' + seconds;
         document.getElementById('clock').innerHTML = clock;
         console.log(clock);
                 }
          digitalClock();
          setInterval(digitalClock, 1000);
-        
-    // 
-    // 
+
     </script>
 </body>
 
